@@ -1,0 +1,45 @@
+.categories {
+    margin: 40px 0;
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        li {
+            margin: 10px 23px;
+            a {
+                color: $black;
+                border-bottom: 2px solid transparent;
+                display: inline-block;
+                font-size: 19px;
+                font-weight: 600;
+                letter-spacing: 1.9px;
+                line-height: 20px;
+                text-decoration: none;
+                transition: 0.5s;
+
+                &:hover {
+                    border-bottom-color: $black;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .categories {
+        margin: 25px 0;
+
+        ul li {
+            margin: 5px;
+
+            a {
+                font-size: 16px;
+            }
+        }
+
+    }
+
+}

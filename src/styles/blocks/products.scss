@@ -1,0 +1,166 @@
+.products {
+    margin: 100px 0;
+
+    .products__info {
+        margin-bottom: 50px;
+        text-align: center;
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        .products__title {
+            color: $offers-name;
+            font-size: 26px;
+            font-weight: 600;
+            letter-spacing: 2.6px;
+            line-height: 30px;
+            text-transform: uppercase;
+        }
+
+        .products__subtitle {
+            color: $offers-name;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 5.6px;
+            line-height: 20px;
+        }
+    }
+
+    .products__block {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        
+        .products__element {
+            flex-basis: 31.5%;
+            position: relative;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                max-width: 100%;
+            }
+
+            .products__btn {
+                bottom: 0;
+                left: 50%;
+                position: absolute;
+                transform: translateX(-50%);
+
+                a {
+                    $values: (fs: 13px, lh: 20px, ls: 0.78px, br: 60px, w: 175px);
+                    @include btn($values...) {
+                        padding: 20px 0;
+                        margin: 45px 0;
+                    };
+                }
+            }
+        }
+
+        .slick-prev, .slick-next {
+            background-color: #afafaf;
+            border: none;
+            color: $black;
+            cursor: pointer;
+            display: block;
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 2.6px;
+            line-height: 20px;
+            padding: 12px 0;
+            position: absolute;
+            text-transform: uppercase;
+            top: 50%;
+            transform: translateY(-50%);
+            transform: rotate(-90deg);
+            width: 110px;
+            z-index: 1;
+    
+            &:focus {
+                outline: none;
+            }
+        }
+    
+        .slick-prev {
+            left: -90px;
+    
+            &:hover {
+                color: $white;
+            }
+        }
+    
+        .slick-next {
+            right: -90px;
+    
+            &:hover {
+                color: $white;
+            }
+        }
+
+        // При подключении слайда возник небольшой сбой в ширине контейнера .featured__block, 
+        // дальнейшие стили помогли решить проблему
+        .slick-list {
+            margin: 0 -15px;
+
+            .slick-slide {
+                padding: 0 15px;
+                
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 1300px) {
+
+    // эти стили прописаны для того, чтобы стрелки слайдера всегда были видны
+    .products {
+        margin: 100px auto;
+        width: calc(100% - 100px);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .products {
+        margin: 25px auto;
+
+        .products__info {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+
+//эти стили нужны в том случае, если слайдер у блока .products__block отключен
+// @media (max-width: 640px) {
+
+//     .products {
+
+//         .products__block {
+//             justify-content: center;
+
+//             .products__element {
+//                 flex-basis: 48%;
+//                 margin: 10px 1%;
+//             }
+//         }
+//     }
+// }
+
+// @media (max-width: 480px) {
+
+//     .products {
+
+//         .products__block {
+
+//             .products__element {
+//                 flex-basis: 100%;
+//                 margin: 10px 0;
+//             }
+//         }
+//     }
+// }

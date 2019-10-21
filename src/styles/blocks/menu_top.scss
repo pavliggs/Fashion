@@ -1,0 +1,28 @@
+.menu {
+
+    ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        li {
+            margin: 3px;
+
+            a {
+                border-bottom: 1px solid transparent;
+                color: $black;
+                font-size: 12px;
+                font-weight: 300;
+                letter-spacing: 0.96px;
+                line-height: 23px;
+                text-decoration: none;
+                text-transform: uppercase;
+                transition: 0.5s;
+
+                &:hover {
+                    border-bottom-color: $black;
+                }
+            }
+        }
+    }
+}
